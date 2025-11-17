@@ -151,15 +151,17 @@ const Viagens = () => {
   };
 
   const handleFerryPress = (ferry: Ferry) => {
-    router.push(`./ferry-details/${ferry.id}`);
+    // CORREÇÃO: Usando a sintaxe correta do Expo Router
+    router.push(`/ferry-details/${ferry.id}`);
   };
 
   const handleBuyTicket = (ferry: Ferry) => {
-  router.push({
-    pathname: '/payment/[ferryId]',
-    params: { ferryId: ferry.id }
-  } as any);
-};
+    // CORREÇÃO: Usando a sintaxe correta do Expo Router
+    router.push({
+      pathname: './payment',
+      params: { ferryId: ferry.id }
+    });
+  };
 
   const handleBackPress = () => {
     router.back();
@@ -345,6 +347,7 @@ const Viagens = () => {
   );
 };
 
+// Os estilos permanecem os mesmos...
 const styles = StyleSheet.create({
   container: {
     flex: 1,
